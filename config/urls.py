@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django_app.views import greetings
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls), # происходит редирект на N  маршрутов
+    path('home-page/', greetings), #
 ]
