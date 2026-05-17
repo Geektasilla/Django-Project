@@ -20,6 +20,12 @@ class Category(models.Model):
         return self.name
 
 
+    class Meta:
+        db_table = 'task_manager_category'
+        verbose_name = 'Category'
+        unique_together = ('name',)
+
+
 class Task(models.Model):
     """
     Task for execution.
@@ -33,6 +39,14 @@ class Task(models.Model):
 
     def __str__(self):
         return self.title
+
+
+    class Meta:
+        db_table = 'task_manager_task'
+        verbose_name = 'Task'
+        unique_together = ('title',)
+        ordering = ('-created_at',)
+
 
 
 class SubTask(models.Model):
@@ -49,6 +63,12 @@ class SubTask(models.Model):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        db_table = 'task_manager_subtask'
+        verbose_name = 'SubTask'
+        unique_together = ('title',)
+        ordering = ('-created_at',)
 
 
 
