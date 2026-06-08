@@ -22,6 +22,7 @@ from django_app.views import greetings
 urlpatterns = [
     path('admin/', admin.site.urls), # происходит редирект на N  маршрутов
     path('home-page/', greetings),
-    path('api/', include('django_app.urls'))
+    path('api/', include('django_app.urls')),
+    path('api-auth/', include('rest_framework.urls')),
 
 ]
