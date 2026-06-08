@@ -52,7 +52,6 @@ class Task(models.Model):
 class SubTask(models.Model):
     """
     Part of the main task (Task).
-
     """
     title = models.CharField(max_length=100)
     description = models.TextField()
