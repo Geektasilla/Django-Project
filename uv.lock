@@ -110,6 +110,7 @@ dependencies = [
     { name = "django-filter" },
     { name = "djangorestframework" },
     { name = "djangorestframework-stubs" },
+    { name = "router" },
 ]
 
 [package.metadata]
@@ -119,7 +120,14 @@ requires-dist = [
     { name = "django-filter", specifier = ">=25.2" },
     { name = "djangorestframework", specifier = ">=3.17.1" },
     { name = "djangorestframework-stubs", specifier = ">=3.17.0" },
+    { name = "router", specifier = ">=0.1" },
 ]
+
+[[package]]
+name = "router"
+version = "0.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/c3/82/f910a28b0e59effbbd058c4b5aab6f83619c64d909371727a9c1a41b844a/router-0.1.tar.gz", hash = "sha256:4ca308adec8b57bb4021a4ffd0d517e5ddd495c19f0a3e96b95b08a3fe87b88e", size = 5506, upload-time = "2010-08-15T19:33:25.285Z" }
 
 [[package]]
 name = "sqlparse"

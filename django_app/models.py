@@ -10,11 +10,22 @@ STATUS_CHOICES = [
 ]
 
 
+
+class CategoryManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(is_deleted=False)
+
+
 class Category(models.Model):
     """
     Category of execution.
     """
     name = models.CharField(max_length=100)
+    is_deleted = models.BooleanField(default=False)
+    deleted_at = models.DateTimeField(null=True)
+    objects = CategoryManager()
+    all_objects = models.Manager()
+
 
     def __str__(self):
         return self.name
