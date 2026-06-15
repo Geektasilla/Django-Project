@@ -6,7 +6,9 @@ from .views import (
     create_task,
     get_tasks_statistics,
     SubTaskListCreateView,
-    SubTaskDetailUpdateDeleteView # Добавлен импорт SubTaskDetailUpdateDeleteView
+    SubTaskDetailUpdateDeleteView,
+    get_tasks_by_day_of_week,
+    get_filtered_subtasks
 )
 
 urlpatterns = [
@@ -15,6 +17,10 @@ urlpatterns = [
     path('tasks/<int:pk>/', get_unique_task, name='task-detail'),
     path('tasks/create/', create_task, name='task-create'),
     path('tasks/statistics/', get_tasks_statistics, name='task-statistics'),
+    path('tasks/by-day/<str:day_name>/', get_tasks_by_day_of_week, name='tasks-by-day-of-week'),
+    
     path('subtasks/', SubTaskListCreateView.as_view(), name='subtask-list-create'),
-    path('subtasks/<int:pk>/', SubTaskDetailUpdateDeleteView.as_view(), name='subtask-detail-update-delete')
+    path('subtasks/<int:pk>/', SubTaskDetailUpdateDeleteView.as_view(), name='subtask-detail-update-delete'),
+    path('subtasks/filter/', get_filtered_subtasks, name='subtask-filter'),
+
 ]

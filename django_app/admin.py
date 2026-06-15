@@ -15,12 +15,10 @@ class TaskAdmin(admin.ModelAdmin):
         'status',
         'deadline',
         'created_at',
-
     )
     search_fields = (
         'title',
         'description'
-
     )
     list_filter = (
         'status',
