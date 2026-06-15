@@ -35,6 +35,7 @@ class TaskRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     allowed_methods = ['GET', 'PUT', 'PATCH', 'DELETE']
 
 
+
 class SubTaskListCreateAPIView(ListCreateAPIView):
     """
     Представление для получения списка всех подзадач и создания новой задачи.
@@ -59,11 +60,3 @@ class SubTaskRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     serializer_class = SubTaskSerializer
     lookup_field = 'pk'
     allowed_methods = ['GET', 'PUT', 'PATCH', 'DELETE']
-
-
-
-
-
-
-
-
