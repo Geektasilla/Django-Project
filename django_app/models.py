@@ -30,7 +30,8 @@ class Task(models.Model):
     """
     Task for execution.
     """
-    title = models.CharField(max_length=100, unique_for_date='created_at')
+    # title = models.CharField(max_length=100, unique_for_date='created_at')
+    title = models.CharField(max_length=100)
     description = models.TextField()
     categories = models.ManyToManyField('Category')
     status = models.CharField(max_length=100, choices=STATUS_CHOICES, default='New')
