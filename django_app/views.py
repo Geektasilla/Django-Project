@@ -37,7 +37,7 @@ class TaskRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
     lookup_field = 'pk'
-    allowed_methods = ['GET', 'PUT', 'PATCH', 'DELETE']
+    # allowed_methods = ['GET', 'PUT', 'PATCH', 'DELETE']
 
 
 
@@ -64,7 +64,7 @@ class SubTaskRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     queryset = SubTask.objects.all()
     serializer_class = SubTaskSerializer
     lookup_field = 'pk'
-    allowed_methods = ['GET', 'PUT', 'PATCH', 'DELETE']
+    # allowed_methods = ['GET', 'PUT', 'PATCH', 'DELETE']
 
 
 class CategoryViewSet(ModelViewSet):
