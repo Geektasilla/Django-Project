@@ -9,6 +9,8 @@ from django_app.serializers import TaskSerializer, SubTaskSerializer, CategorySe
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from django.utils import timezone
+from django_app.pagination import CategoryPagination, MainCursorPagination
+
 
 
 def greetings(request: HttpRequest) -> HttpResponse:
@@ -21,6 +23,7 @@ class TaskListCreateAPIView(ListCreateAPIView):
     """
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
+    pagination_class = MainCursorPagination
     filter_backends = [
         DjangoFilterBackend,
         filters.SearchFilter,
@@ -47,6 +50,7 @@ class SubTaskListCreateAPIView(ListCreateAPIView):
     """
     queryset = SubTask.objects.all()
     serializer_class = SubTaskSerializer
+    pagination_class = MainCursorPagination
     filter_backends = [
         DjangoFilterBackend,
         filters.SearchFilter,
@@ -73,6 +77,7 @@ class CategoryViewSet(ModelViewSet):
     """
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+    pagination_class = CategoryPagination
 
     @action(detail=False, methods=['get'])
     def count_tasks(self, request):
