@@ -75,15 +75,22 @@ class SubTaskAdmin(admin.ModelAdmin):
         
     actions = ['mark_subtasks_done']
 
-
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
         'name',
+        'is_deleted',
+        'deleted_at'
     )
     search_fields = (
         'name',
     )
+    list_filter = (
+        'is_deleted',
+    )
+
+    def get_queryset(self, request):
+        return self.model._base_manager.all()
 
 
 
