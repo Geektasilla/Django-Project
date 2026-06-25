@@ -50,3 +50,67 @@ WARNING 2026-06-24 06:01:18,038 django.request Not Found: /favicon.ico
 WARNING 2026-06-24 06:17:06,115 django.request Not Found: /api/subtasks/9/
 WARNING 2026-06-24 06:21:27,569 django.request Bad Request: /api/subtasks/
 WARNING 2026-06-24 06:22:32,924 django.request Bad Request: /api/subtasks/
+WARNING 2026-06-24 08:13:56,019 django.request Not Found: /
+WARNING 2026-06-24 08:13:56,265 django.request Not Found: /favicon.ico
+WARNING 2026-06-24 08:17:22,567 django.request Not Found: /
+WARNING 2026-06-24 08:17:49,559 django.request Not Found: /tasks/
+WARNING 2026-06-24 08:17:55,977 django.request Not Found: /task/
+WARNING 2026-06-24 08:24:17,165 django.request Not Found: /api/token/
+WARNING 2026-06-24 08:28:36,931 django.request Not Found: /api/categories/protected/
+WARNING 2026-06-25 05:31:33,066 django.request Not Found: /api/token/
+WARNING 2026-06-25 05:38:41,591 django.request Not Found: /
+WARNING 2026-06-25 05:38:41,842 django.request Not Found: /favicon.ico
+WARNING 2026-06-25 05:39:05,502 django.request Method Not Allowed: /api/token/
+WARNING 2026-06-25 06:05:04,278 django.request Not Found: /api/token/refresh/
+WARNING 2026-06-25 06:06:44,181 django.request Not Found: /
+WARNING 2026-06-25 06:07:08,877 django.request Method Not Allowed: /api/token/refresh/
+WARNING 2026-06-25 06:08:17,790 django.request Unauthorized: /api/token/refresh/
+WARNING 2026-06-25 06:08:47,796 django.request Method Not Allowed: /api/token/
+WARNING 2026-06-25 06:09:48,397 django.request Method Not Allowed: /api/token/refresh/
+WARNING 2026-06-25 06:12:17,813 django.request Method Not Allowed: /api/token/
+ERROR 2026-06-25 06:13:44,779 django.request Internal Server Error: /api/token/refresh
+Traceback (most recent call last):
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\utils\deprecation.py", line 311, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\middleware\common.py", line 109, in process_response
+    self.get_full_path_with_slash(request)
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/api/token/refresh/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2026-06-25 06:16:37,085 django.request Internal Server Error: /api/token/refresh
+Traceback (most recent call last):
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\utils\deprecation.py", line 311, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\middleware\common.py", line 109, in process_response
+    self.get_full_path_with_slash(request)
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/api/token/refresh/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+WARNING 2026-06-25 06:35:31,251 django.request Not Found: /
+WARNING 2026-06-25 06:35:38,840 django.request Unauthorized: /api/tasks/
+WARNING 2026-06-25 06:37:54,914 django.request Not Found: /
+WARNING 2026-06-25 06:38:14,846 django.request Not Found: /
+WARNING 2026-06-25 06:41:05,279 django.request Unauthorized: /api/subtasks/
+WARNING 2026-06-25 06:42:52,261 django.request Unauthorized: /api/categories/
+WARNING 2026-06-25 06:42:58,518 django.request Unauthorized: /api/categories/
+WARNING 2026-06-25 06:48:48,907 django.request Unauthorized: /api/categories/
+WARNING 2026-06-25 06:49:10,831 django.request Not Found: /
+WARNING 2026-06-25 06:49:20,830 django.request Unauthorized: /api/categories/
+WARNING 2026-06-25 06:49:36,081 django.request Unauthorized: /api/categories/
+WARNING 2026-06-25 06:50:18,052 django.request Not Found: /
+WARNING 2026-06-25 06:57:38,172 django.request Unauthorized: /api/tasks/
+WARNING 2026-06-25 07:02:58,827 django.request Not Found: /api/category/
+WARNING 2026-06-25 07:03:57,451 django.request Not Found: /api/category/
+WARNING 2026-06-25 07:04:25,545 django.request Not Found: /api/category/
+WARNING 2026-06-25 07:05:04,339 django.request Unauthorized: /api/categories/
+WARNING 2026-06-25 07:20:26,055 django.request Unauthorized: /api/categories/
+WARNING 2026-06-25 07:34:28,531 django.request Unauthorized: /api/categories/
+WARNING 2026-06-25 07:38:54,665 django.request Not Found: /

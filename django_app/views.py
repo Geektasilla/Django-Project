@@ -10,6 +10,8 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from django.utils import timezone
 from django_app.pagination import CategoryPagination, MainCursorPagination
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.views import APIView
 
 
 
@@ -21,6 +23,7 @@ class TaskListCreateAPIView(ListCreateAPIView):
     """
     Представление для получения списка всех задач и создания новой задачи.
     """
+    permission_classes = [IsAuthenticated]
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
     pagination_class = MainCursorPagination
@@ -37,6 +40,7 @@ class TaskRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     """
     Представление для получения, обновления и удаления одной задачи по её ID.
     """
+    permission_classes = [IsAuthenticated]
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
     lookup_field = 'pk'
@@ -48,6 +52,7 @@ class SubTaskListCreateAPIView(ListCreateAPIView):
     """
     Представление для получения списка всех подзадач и создания новой задачи.
     """
+    permission_classes = [IsAuthenticated]
     queryset = SubTask.objects.all()
     serializer_class = SubTaskSerializer
     pagination_class = MainCursorPagination
@@ -65,6 +70,7 @@ class SubTaskRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     """
     Представление для получения, обновления и удаления одной подзадачи по её ID.
     """
+    permission_classes = [IsAuthenticated]
     queryset = SubTask.objects.all()
     serializer_class = SubTaskSerializer
     lookup_field = 'pk'
@@ -75,6 +81,7 @@ class CategoryViewSet(ModelViewSet):
     """
     Представление для получения списка всех категорий и создания новой категории.
     """
+    permission_classes = [IsAuthenticated]
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     pagination_class = CategoryPagination
@@ -96,5 +103,11 @@ class CategoryViewSet(ModelViewSet):
         instance.deleted_at = timezone.now()
         instance.save()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+class ProtectedDataView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        return Response ({"message": "Hello, authenticated user!", "user": request.user.username})
 
 
