@@ -1,14 +1,14 @@
 from django.contrib import admin
 from django_app.models import Task, Category, SubTask
 
-class SubtaskInlineForm(admin.TabularInline):
-    model = SubTask
-    extra = 1
-    max_num = 3
+# class SubtaskInlineForm(admin.TabularInline):
+#     model = SubTask
+#     extra = 1
+#     max_num = 3
 
 @admin.register(Task)
 class TaskAdmin(admin.ModelAdmin):
-    inlines = [SubtaskInlineForm]
+    # inlines = [SubtaskInlineForm]
     list_display = (
         'short_title',
         'show_about',
@@ -47,32 +47,32 @@ class TaskAdmin(admin.ModelAdmin):
     show_about.short_description = "about"
 
 
-@admin.register(SubTask)
-class SubTaskAdmin(admin.ModelAdmin):
-    list_display = (
-        'title',
-        'description',
-        'status',
-        'task',
-        'deadline',
-        'created_at'
-    )
-    search_fields = (
-        'title',
-        'created_at'
-    )
-    list_filter = (
-        'status',
-        'created_at'
-    )
-    list_editable = (
-        'status',
-    )
+# @admin.register(SubTask)
+# class SubTaskAdmin(admin.ModelAdmin):
+#     list_display = (
+#         'title',
+#         'description',
+#         'status',
+#         'task',
+#         'deadline',
+#         'created_at'
+#     )
+#     search_fields = (
+#         'title',
+#         'created_at'
+#     )
+#     list_filter = (
+#         'status',
+#         'created_at'
+#     )
+#     list_editable = (
+#         'status',
+#     )
 
     @admin.action(description='Mark selected subtasks as Done')
     def  mark_subtasks_done(self, request, obj):
         obj.update(status='Done')
-        
+
     actions = ['mark_subtasks_done']
 
 @admin.register(Category)

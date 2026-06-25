@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+
 
 
 STATUS_CHOICES = [
@@ -48,6 +50,15 @@ class Task(models.Model):
     status = models.CharField(max_length=100, choices=STATUS_CHOICES, default='New')
     deadline = models.DateTimeField()
     created_at = models.DateTimeField(auto_now_add=True)
+    owner = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name='tasks'
+    )
+
+
 
     def __str__(self):
         return self.title
@@ -71,6 +82,13 @@ class SubTask(models.Model):
     status = models.CharField(max_length=100, choices=STATUS_CHOICES, default='New')
     deadline = models.DateTimeField()
     created_at = models.DateTimeField(auto_now_add=True)
+    owner = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name='subtasks'
+    )
 
     def __str__(self):
         return self.title

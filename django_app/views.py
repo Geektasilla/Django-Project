@@ -12,19 +12,32 @@ from django.utils import timezone
 from django_app.pagination import CategoryPagination, MainCursorPagination
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
+from django_app.permissions import IsOwner
 
+
+class UserOwnedMixin:
+    permission_classes = [IsAuthenticated, IsOwner]
+
+    def get_queryset(self):
+        if self.request.user.is_anonymous:
+            return self.queryset.none()
+
+        return self.queryset.filter(owner=self.request.user)
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
 
 
 def greetings(request: HttpRequest) -> HttpResponse:
   return HttpResponse('HELLO FROM OUR FIRST VIEW!!!')
 
 
-class TaskListCreateAPIView(ListCreateAPIView):
+class TaskListCreateAPIView(UserOwnedMixin, ListCreateAPIView):
     """
     Представление для получения списка всех задач и создания новой задачи.
     """
-    permission_classes = [IsAuthenticated]
     queryset = Task.objects.all()
+    permission_classes = [IsAuthenticated]
     serializer_class = TaskSerializer
     pagination_class = MainCursorPagination
     filter_backends = [
@@ -36,24 +49,23 @@ class TaskListCreateAPIView(ListCreateAPIView):
     search_fields = ['title', 'description']
     ordering_fields = ['created_at']
 
-class TaskRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+
+class TaskRetrieveUpdateDestroyAPIView(UserOwnedMixin, RetrieveUpdateDestroyAPIView):
     """
     Представление для получения, обновления и удаления одной задачи по её ID.
     """
-    permission_classes = [IsAuthenticated]
     queryset = Task.objects.all()
+    permission_classes = [IsAuthenticated]
     serializer_class = TaskSerializer
     lookup_field = 'pk'
-    # allowed_methods = ['GET', 'PUT', 'PATCH', 'DELETE']
 
 
-
-class SubTaskListCreateAPIView(ListCreateAPIView):
+class SubTaskListCreateAPIView(UserOwnedMixin, ListCreateAPIView):
     """
     Представление для получения списка всех подзадач и создания новой задачи.
     """
-    permission_classes = [IsAuthenticated]
     queryset = SubTask.objects.all()
+    permission_classes = [IsAuthenticated]
     serializer_class = SubTaskSerializer
     pagination_class = MainCursorPagination
     filter_backends = [
@@ -66,15 +78,14 @@ class SubTaskListCreateAPIView(ListCreateAPIView):
     ordering_fields = ['created_at']
 
 
-class SubTaskRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+class SubTaskRetrieveUpdateDestroyAPIView(UserOwnedMixin, RetrieveUpdateDestroyAPIView):
     """
     Представление для получения, обновления и удаления одной подзадачи по её ID.
     """
-    permission_classes = [IsAuthenticated]
     queryset = SubTask.objects.all()
+    permission_classes = [IsAuthenticated]
     serializer_class = SubTaskSerializer
     lookup_field = 'pk'
-    # allowed_methods = ['GET', 'PUT', 'PATCH', 'DELETE']
 
 
 class CategoryViewSet(ModelViewSet):

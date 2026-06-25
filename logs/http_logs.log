@@ -114,3 +114,20 @@ WARNING 2026-06-25 07:05:04,339 django.request Unauthorized: /api/categories/
 WARNING 2026-06-25 07:20:26,055 django.request Unauthorized: /api/categories/
 WARNING 2026-06-25 07:34:28,531 django.request Unauthorized: /api/categories/
 WARNING 2026-06-25 07:38:54,665 django.request Not Found: /
+WARNING 2026-06-25 17:39:25,063 django.request Not Found: /
+WARNING 2026-06-25 17:48:55,061 django.request Not Found: /api/task
+WARNING 2026-06-25 17:49:00,806 django.request Unauthorized: /api/tasks/
+WARNING 2026-06-25 17:57:41,550 django.request Not Found: /
+WARNING 2026-06-25 17:57:41,710 django.request Not Found: /favicon.ico
+WARNING 2026-06-25 17:57:45,717 django.request Unauthorized: /api/tasks/
+WARNING 2026-06-25 17:57:46,917 django.request Unauthorized: /api/tasks/
+WARNING 2026-06-25 17:58:57,709 django.request Unauthorized: /api/subtasks/
+WARNING 2026-06-25 17:59:02,297 django.request Unauthorized: /api/subtasks/
+WARNING 2026-06-25 17:59:04,924 django.request Unauthorized: /api/subtasks/
+WARNING 2026-06-25 17:59:08,990 django.request Unauthorized: /api/subtasks/
+WARNING 2026-06-25 17:59:11,515 django.request Unauthorized: /api/subtasks/
+WARNING 2026-06-25 18:00:07,544 django.request Not Found: /
+WARNING 2026-06-25 18:04:16,988 django.request Bad Request: /api/tasks/
+WARNING 2026-06-25 19:39:13,875 django.request Not Found: /
+WARNING 2026-06-25 19:44:28,821 django.request Not Found: /accounts/login/
+WARNING 2026-06-25 19:55:14,653 django.request Not Found: /
