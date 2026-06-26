@@ -6,7 +6,10 @@ from .views import (
     TaskRetrieveUpdateDestroyAPIView,
     SubTaskListCreateAPIView,
     SubTaskRetrieveUpdateDestroyAPIView,
-    CategoryViewSet
+    CategoryViewSet,
+    UserRegistrationAPIView,
+    LoginUser,
+    LogoutUser
 )
 
 
@@ -20,5 +23,10 @@ urlpatterns = [
     path('tasks/<int:pk>/', TaskRetrieveUpdateDestroyAPIView.as_view()),
     path('subtasks/', SubTaskListCreateAPIView.as_view()),
     path('subtasks/<int:pk>/', SubTaskRetrieveUpdateDestroyAPIView.as_view()),
+
+    path('register/', UserRegistrationAPIView.as_view(), name='register'),
+    path('login/', LoginUser.as_view(), name='login'),
+    path('logout/', LogoutUser.as_view(), name='logout'),
+
     path('', include(router.urls)),
 ]
