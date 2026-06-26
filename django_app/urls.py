@@ -1,26 +1,32 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 from .views import (
     greetings,
-    get_all_tasks,
-    get_unique_task,
-    create_task,
-    get_tasks_statistics,
-    SubTaskListCreateView,
-    SubTaskDetailUpdateDeleteView,
-    get_tasks_by_day_of_week,
-    get_filtered_subtasks
+    TaskListCreateAPIView,
+    TaskRetrieveUpdateDestroyAPIView,
+    SubTaskListCreateAPIView,
+    SubTaskRetrieveUpdateDestroyAPIView,
+    CategoryViewSet,
+    UserRegistrationAPIView,
+    LoginUser,
+    LogoutUser
 )
+
+
+router = DefaultRouter()
+router.register(r'categories', CategoryViewSet, basename='category')
+
 
 urlpatterns = [
     path('home-page/', greetings),
-    path('tasks/', get_all_tasks, name='task-list'),
-    path('tasks/<int:pk>/', get_unique_task, name='task-detail'),
-    path('tasks/create/', create_task, name='task-create'),
-    path('tasks/statistics/', get_tasks_statistics, name='task-statistics'),
-    path('tasks/by-day/<str:day_name>/', get_tasks_by_day_of_week, name='tasks-by-day-of-week'),
-    
-    path('subtasks/', SubTaskListCreateView.as_view(), name='subtask-list-create'),
-    path('subtasks/<int:pk>/', SubTaskDetailUpdateDeleteView.as_view(), name='subtask-detail-update-delete'),
-    path('subtasks/filter/', get_filtered_subtasks, name='subtask-filter'),
+    path('tasks/', TaskListCreateAPIView.as_view()),
+    path('tasks/<int:pk>/', TaskRetrieveUpdateDestroyAPIView.as_view()),
+    path('subtasks/', SubTaskListCreateAPIView.as_view()),
+    path('subtasks/<int:pk>/', SubTaskRetrieveUpdateDestroyAPIView.as_view()),
 
+    path('register/', UserRegistrationAPIView.as_view(), name='register'),
+    path('login/', LoginUser.as_view(), name='login'),
+    path('logout/', LogoutUser.as_view(), name='logout'),
+
+    path('', include(router.urls)),
 ]
