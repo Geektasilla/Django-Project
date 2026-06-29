@@ -13,17 +13,13 @@ def notify_on_status_change(sender, instance, **kwargs):
 
     if old_task.status != instance.status:
         print("DEBUG: Статусы разные! Отправляем письмо...")
-        if instance.status == 'Done':
-            send_mail(
-                'Задача закрыта',
-                f'Задача {instance.id} была закрыта.',
-                'admin@gmail.com',
-                [instance.owner.email]
-            )
-        else:
-            send_mail(
-                'Статус обновлен',
-                f'Статус задачи {instance.id} изменен на {instance.status}.',
-                'admin@gmail.com',
-                [instance.owner.email]
-            )
+
+        send_mail(
+            'Статус обновлен',
+            f'Статус изменен с {old_task.status} на {instance.status}.',
+            'admin@gmail.com',
+            [instance.owner.email],
+            fail_silently = False
+        )
+    else:
+        print("DEBUG: Статусы идентичны, письмо не нужно.")
