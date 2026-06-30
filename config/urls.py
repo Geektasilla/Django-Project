@@ -16,13 +16,32 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from drf_yasg import openapi
+from rest_framework import permissions
 from django_app.views import greetings
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from drf_yasg.views import get_schema_view
+
+schema_view = get_schema_view(
+   openapi.Info(
+      title="My Project API",
+      default_version='v1',
+      description="API documentation for my project",
+   ),
+   public=True,
+   permission_classes=[permissions.AllowAny],
+)
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls), # происходит редирект на N  маршрутов
+    path('admin/', admin.site.urls), # редирект, а включение (include) целого набора внутренних маршрутов панели администратора
     path('home-page/', greetings),
     path('api/', include('django_app.urls')),
     path('api-auth/', include('rest_framework.urls')),
-
+    # пригодится для обновления токенов
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    #документация
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]

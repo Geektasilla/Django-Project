@@ -1,9 +1,21 @@
+# Environments
 .env
 .venv
 
-
+# Databases
 db.sqlite3
 *.db
 
-.idea
-__pycache__
+# IDE
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+
+# Custom
+hw_tasks/
+
+#Не выкладываем и исключаем все файлики логирования.
+*/*.log
+

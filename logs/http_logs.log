@@ -1,0 +1,395 @@
+WARNING 2026-06-23 20:23:20,106 django.request Not Found: /
+WARNING 2026-06-23 20:23:20,311 django.request Not Found: /favicon.ico
+ERROR 2026-06-23 20:23:34,691 django.request Internal Server Error: /api/tasks/
+Traceback (most recent call last):
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\generics.py", line 243, in get
+    return self.list(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\mixins.py", line 40, in list
+    page = self.paginate_queryset(queryset)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\generics.py", line 175, in paginate_queryset
+    return self.paginator.paginate_queryset(queryset, self.request, view=self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\pagination.py", line 565, in paginate_queryset
+    queryset = queryset.order_by(*self.ordering)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\db\models\query.py", line 1772, in order_by
+    obj.query.add_ordering(*field_names)
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\db\models\sql\query.py", line 2343, in add_ordering
+    self.names_to_path(item.split(LOOKUP_SEP), self.model._meta)
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1842, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'created' into field. Choices are: categories, created_at, deadline, description, id, status, subtask, title
+WARNING 2026-06-23 20:35:45,408 django.request Not Found: /
+WARNING 2026-06-23 20:37:05,695 django.request Bad Request: /api/tasks/
+WARNING 2026-06-24 06:01:17,730 django.request Not Found: /
+WARNING 2026-06-24 06:01:18,038 django.request Not Found: /favicon.ico
+WARNING 2026-06-24 06:17:06,115 django.request Not Found: /api/subtasks/9/
+WARNING 2026-06-24 06:21:27,569 django.request Bad Request: /api/subtasks/
+WARNING 2026-06-24 06:22:32,924 django.request Bad Request: /api/subtasks/
+WARNING 2026-06-24 08:13:56,019 django.request Not Found: /
+WARNING 2026-06-24 08:13:56,265 django.request Not Found: /favicon.ico
+WARNING 2026-06-24 08:17:22,567 django.request Not Found: /
+WARNING 2026-06-24 08:17:49,559 django.request Not Found: /tasks/
+WARNING 2026-06-24 08:17:55,977 django.request Not Found: /task/
+WARNING 2026-06-24 08:24:17,165 django.request Not Found: /api/token/
+WARNING 2026-06-24 08:28:36,931 django.request Not Found: /api/categories/protected/
+WARNING 2026-06-25 05:31:33,066 django.request Not Found: /api/token/
+WARNING 2026-06-25 05:38:41,591 django.request Not Found: /
+WARNING 2026-06-25 05:38:41,842 django.request Not Found: /favicon.ico
+WARNING 2026-06-25 05:39:05,502 django.request Method Not Allowed: /api/token/
+WARNING 2026-06-25 06:05:04,278 django.request Not Found: /api/token/refresh/
+WARNING 2026-06-25 06:06:44,181 django.request Not Found: /
+WARNING 2026-06-25 06:07:08,877 django.request Method Not Allowed: /api/token/refresh/
+WARNING 2026-06-25 06:08:17,790 django.request Unauthorized: /api/token/refresh/
+WARNING 2026-06-25 06:08:47,796 django.request Method Not Allowed: /api/token/
+WARNING 2026-06-25 06:09:48,397 django.request Method Not Allowed: /api/token/refresh/
+WARNING 2026-06-25 06:12:17,813 django.request Method Not Allowed: /api/token/
+ERROR 2026-06-25 06:13:44,779 django.request Internal Server Error: /api/token/refresh
+Traceback (most recent call last):
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\utils\deprecation.py", line 311, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\middleware\common.py", line 109, in process_response
+    self.get_full_path_with_slash(request)
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/api/token/refresh/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2026-06-25 06:16:37,085 django.request Internal Server Error: /api/token/refresh
+Traceback (most recent call last):
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\utils\deprecation.py", line 311, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\middleware\common.py", line 109, in process_response
+    self.get_full_path_with_slash(request)
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/api/token/refresh/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+WARNING 2026-06-25 06:35:31,251 django.request Not Found: /
+WARNING 2026-06-25 06:35:38,840 django.request Unauthorized: /api/tasks/
+WARNING 2026-06-25 06:37:54,914 django.request Not Found: /
+WARNING 2026-06-25 06:38:14,846 django.request Not Found: /
+WARNING 2026-06-25 06:41:05,279 django.request Unauthorized: /api/subtasks/
+WARNING 2026-06-25 06:42:52,261 django.request Unauthorized: /api/categories/
+WARNING 2026-06-25 06:42:58,518 django.request Unauthorized: /api/categories/
+WARNING 2026-06-25 06:48:48,907 django.request Unauthorized: /api/categories/
+WARNING 2026-06-25 06:49:10,831 django.request Not Found: /
+WARNING 2026-06-25 06:49:20,830 django.request Unauthorized: /api/categories/
+WARNING 2026-06-25 06:49:36,081 django.request Unauthorized: /api/categories/
+WARNING 2026-06-25 06:50:18,052 django.request Not Found: /
+WARNING 2026-06-25 06:57:38,172 django.request Unauthorized: /api/tasks/
+WARNING 2026-06-25 07:02:58,827 django.request Not Found: /api/category/
+WARNING 2026-06-25 07:03:57,451 django.request Not Found: /api/category/
+WARNING 2026-06-25 07:04:25,545 django.request Not Found: /api/category/
+WARNING 2026-06-25 07:05:04,339 django.request Unauthorized: /api/categories/
+WARNING 2026-06-25 07:20:26,055 django.request Unauthorized: /api/categories/
+WARNING 2026-06-25 07:34:28,531 django.request Unauthorized: /api/categories/
+WARNING 2026-06-25 07:38:54,665 django.request Not Found: /
+WARNING 2026-06-25 17:39:25,063 django.request Not Found: /
+WARNING 2026-06-25 17:48:55,061 django.request Not Found: /api/task
+WARNING 2026-06-25 17:49:00,806 django.request Unauthorized: /api/tasks/
+WARNING 2026-06-25 17:57:41,550 django.request Not Found: /
+WARNING 2026-06-25 17:57:41,710 django.request Not Found: /favicon.ico
+WARNING 2026-06-25 17:57:45,717 django.request Unauthorized: /api/tasks/
+WARNING 2026-06-25 17:57:46,917 django.request Unauthorized: /api/tasks/
+WARNING 2026-06-25 17:58:57,709 django.request Unauthorized: /api/subtasks/
+WARNING 2026-06-25 17:59:02,297 django.request Unauthorized: /api/subtasks/
+WARNING 2026-06-25 17:59:04,924 django.request Unauthorized: /api/subtasks/
+WARNING 2026-06-25 17:59:08,990 django.request Unauthorized: /api/subtasks/
+WARNING 2026-06-25 17:59:11,515 django.request Unauthorized: /api/subtasks/
+WARNING 2026-06-25 18:00:07,544 django.request Not Found: /
+WARNING 2026-06-25 18:04:16,988 django.request Bad Request: /api/tasks/
+WARNING 2026-06-25 19:39:13,875 django.request Not Found: /
+WARNING 2026-06-25 19:44:28,821 django.request Not Found: /accounts/login/
+WARNING 2026-06-25 19:55:14,653 django.request Not Found: /
+ERROR 2026-06-29 18:07:06,553 django.request | log | 15588 | 24248 | Internal Server Error: /api/tasks/12
+Traceback (most recent call last):
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\utils\deprecation.py", line 311, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\middleware\common.py", line 109, in process_response
+    self.get_full_path_with_slash(request)
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via PUT, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining PUT data. Change your form to point to 127.0.0.1:8000/api/tasks/12/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2026-06-29 18:09:32,654 django.request | log | 15588 | 19040 | Internal Server Error: /api/tasks/12
+Traceback (most recent call last):
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\utils\deprecation.py", line 311, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\middleware\common.py", line 109, in process_response
+    self.get_full_path_with_slash(request)
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via PUT, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining PUT data. Change your form to point to 127.0.0.1:8000/api/tasks/12/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2026-06-29 18:20:12,162 django.request | log | 24336 | 24340 | Internal Server Error: /api/tasks/12/
+Traceback (most recent call last):
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\mixins.py", line 68, in update
+    self.perform_update(serializer)
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\mixins.py", line 78, in perform_update
+    serializer.save()
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\serializers.py", line 205, in save
+    self.instance = self.update(self.instance, validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\serializers.py", line 1055, in update
+    instance.save()
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\db\models\base.py", line 874, in save
+    self.save_base(
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\db\models\base.py", line 946, in save_base
+    pre_save.send(
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\dispatch\dispatcher.py", line 209, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\django_app\signals.py", line 51, in task_status_changed_or_closed
+    'admin@gmail.com'
+TypeError: string indices must be integers, not 'str'
+ERROR 2026-06-29 18:24:49,674 django.request | log | 23024 | 23740 | Internal Server Error: /api/tasks/11/
+Traceback (most recent call last):
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\mixins.py", line 68, in update
+    self.perform_update(serializer)
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\mixins.py", line 78, in perform_update
+    serializer.save()
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\serializers.py", line 205, in save
+    self.instance = self.update(self.instance, validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\serializers.py", line 1055, in update
+    instance.save()
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\db\models\base.py", line 874, in save
+    self.save_base(
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\db\models\base.py", line 946, in save_base
+    pre_save.send(
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\dispatch\dispatcher.py", line 209, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\django_app\signals.py", line 44, in task_status_changed_or_closed
+    'admin@gmail.com'
+TypeError: string indices must be integers, not 'str'
+ERROR 2026-06-29 18:25:54,346 django.request | log | 6248 | 2784 | Internal Server Error: /api/tasks/11/
+Traceback (most recent call last):
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\mixins.py", line 68, in update
+    self.perform_update(serializer)
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\mixins.py", line 78, in perform_update
+    serializer.save()
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\serializers.py", line 205, in save
+    self.instance = self.update(self.instance, validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\serializers.py", line 1055, in update
+    instance.save()
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\db\models\base.py", line 874, in save
+    self.save_base(
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\db\models\base.py", line 946, in save_base
+    pre_save.send(
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\dispatch\dispatcher.py", line 209, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\django_app\signals.py", line 41, in task_status_changed_or_closed
+    send_mail(
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\utils\deprecation.py", line 268, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+TypeError: send_mail() missing 1 required positional argument: 'recipient_list'
+ERROR 2026-06-29 18:26:14,715 django.request | log | 6248 | 2784 | Internal Server Error: /api/tasks/11/
+Traceback (most recent call last):
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\mixins.py", line 68, in update
+    self.perform_update(serializer)
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\mixins.py", line 78, in perform_update
+    serializer.save()
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\serializers.py", line 205, in save
+    self.instance = self.update(self.instance, validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\serializers.py", line 1055, in update
+    instance.save()
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\db\models\base.py", line 874, in save
+    self.save_base(
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\db\models\base.py", line 946, in save_base
+    pre_save.send(
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\dispatch\dispatcher.py", line 209, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\django_app\signals.py", line 41, in task_status_changed_or_closed
+    send_mail(
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\utils\deprecation.py", line 268, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+TypeError: send_mail() missing 1 required positional argument: 'recipient_list'
+ERROR 2026-06-29 18:26:25,904 django.request | log | 22912 | 23700 | Internal Server Error: /api/tasks/11/
+Traceback (most recent call last):
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\mixins.py", line 68, in update
+    self.perform_update(serializer)
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\mixins.py", line 78, in perform_update
+    serializer.save()
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\serializers.py", line 205, in save
+    self.instance = self.update(self.instance, validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\rest_framework\serializers.py", line 1055, in update
+    instance.save()
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\db\models\base.py", line 874, in save
+    self.save_base(
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\db\models\base.py", line 946, in save_base
+    pre_save.send(
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\.venv\Lib\site-packages\django\dispatch\dispatcher.py", line 209, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Viktoriia\Desktop\ICH\NEW_Django\django_app\signals.py", line 44, in task_status_changed_or_closed
+    'admin@gmail.com'
+TypeError: string indices must be integers, not 'str'
